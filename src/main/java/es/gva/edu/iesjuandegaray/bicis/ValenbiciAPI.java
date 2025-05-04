@@ -46,6 +46,7 @@ public class ValenbiciAPI {
                     //  Recorre el vector resultsArray mostrando los datos solicitados.
                     for (int i = 0; i < resultsArray.length(); i++) {
                         JSONObject resultObject = resultsArray.getJSONObject(i);
+
                         String address = resultObject.getString("address");
                         int free = resultObject.getInt("free");
                         int available = resultObject.getInt("available");
