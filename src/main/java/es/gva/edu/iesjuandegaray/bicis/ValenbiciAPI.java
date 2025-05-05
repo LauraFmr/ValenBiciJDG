@@ -45,13 +45,14 @@ public class ValenbiciAPI {
 
                     //  Recorre el vector resultsArray mostrando los datos solicitados.
                     for (int i = 0; i < resultsArray.length(); i++) {
-                        JSONObject resultObject = resultsArray.getJSONObject(i);
+                        // Objeto JSON de una estacion
+                        JSONObject estacion = resultsArray.getJSONObject(i);
 
-                        String address = resultObject.getString("address");
-                        int free = resultObject.getInt("free");
-                        int available = resultObject.getInt("available");
+                        String direccion = estacion.getString("address");
+                        int bicisDisponibles = estacion.getInt("free");
+                        int espaciosDisponibles = estacion.getInt("available");
 
-                        System.out.println("La estación es: " + address + " , Bicis disponibles: " + free + " , Espacios disponibles: " + available);
+                        System.out.println("La estación es: " + direccion + " , Bicis disponibles: " + bicisDisponibles + " , Espacios disponibles: " + espaciosDisponibles);
 
                     }
                 } catch (org.json.JSONException e) {
